@@ -14,13 +14,13 @@ fastq
 ## Analysis
 
 Three data sets
-	- ont, fast base calls
-	- ont, accurate base calls
-	- illumina
+- ont, fast base calls
+- ont, accurate base calls
+- illumina
 
 Four variant callers
-	- medaka (ont)
-	- pepper-margin-deepvariant (ont)
-	- GATK (illumina)
-	- freebayes (illumina)
+- medaka (ont)
+- pepper-margin-deepvariant (ont)
+- GATK (illumina)
+- freebayes (illumina)
 
