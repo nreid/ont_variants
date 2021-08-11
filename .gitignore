@@ -1,0 +1,7 @@
+**/data
+**/results
+*.out
+*.err
+**/genome
+.DS_Store
+
