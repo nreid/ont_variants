@@ -28,7 +28,7 @@ mkdir -p $GENOMEDIR
 
 GENOME=/projects/EBP/Oneill/reads/illumina/coral/coral/primnoidae_646m/genome_assembly/m1p1-4_rmcontam/flye/750m_icov40/medaka/purge_haplotigs/purge_duplicates/curated/seqs/curated.purged.fa
 
-ln -s $GENOME coral.fasta
+ln -s $GENOME $GENOMEDIR/coral.fasta
 
 # index the genome using bwa
 bwa index \
@@ -59,7 +59,7 @@ mkdir -p $SHORTDIR
 # fast base-called data
 FA=/projects/EBP/Oneill/reads/nanopore/promethion/coral/coral/primnoidae_646m/combined_ont_reads/centrifuge/coral_combined_m1p1-4_2kbfilt_rmcontam.fasta
 
-ln -s $FA fast_called.fasta
+ln -s $FA $LONGDIR/fast_called.fasta
 
 # re-base-called data
 #TBD
