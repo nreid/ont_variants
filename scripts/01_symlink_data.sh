@@ -57,7 +57,7 @@ LONGDIR=../data/longreads
 mkdir -p $SHORTDIR
 
 # fast base-called data
-FA=/projects/EBP/Oneill/reads/nanopore/promethion/coral/coral/primnoidae_646m/combined_ont_reads/centrifuge/coral_combined_m1p1-4_2kbfilt_rmcontam.fasta
+FA=/projects/EBP/Oneill/reads/illumina/coral/coral/primnoidae_646m/refine_reads/combined_ont_reads/centrifuge/coral_combined_m1p1-4_2kbfilt_rmcontam.fasta
 
 ln -s $FA $LONGDIR/fast_called.fasta
 
