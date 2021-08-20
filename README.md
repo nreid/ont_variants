@@ -2,7 +2,7 @@
 
 ## Data
 ### Reference genome
-
+- `/projects/EBP/Oneill/coral/primnoidae_646m/genome_assembly/m1p1-4_rmcontam/flye/750m_icov40/medaka/purge_haplotigs/purge_duplicates/curated/seqs/curated.purged.fa`
 
 ### ONT data
 fast5
