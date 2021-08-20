@@ -1,0 +1,14 @@
+# Adjust to include 9606 (human) classified reads in fastq
+# Have heard general practice that human and general eukaryotes are similar enough to exclude as "contamination"
+
+# Sort fastq lines identified as 9606 (human) into separate 
+grep -A3 kraken:taxid|9606 classified_1.fastq > classified_1_9606.fastq
+grep -A3 kraken:taxid|9606 classified_2.fastq > classified_2_9606.fastq
+
+# Combine 9606 and unclassified fastqs
+cat classified_1_9606.fastq >> unclassified_1.fastq
+cat classified_2_9606.fastq >> unclassified_2.fastq
+
+# Change name to differentiate
+mv unclassified_1.fastq unclassified_1_and9606.fastq
+mv unclassified_2.fastq unclassified_2_and9606.fastq
