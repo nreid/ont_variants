@@ -39,7 +39,7 @@ cut -f 1-2 $FAI > $GFILE
 WIN1KB=$OUTDIR/coral_1kb.bed
 bedtools makewindows -g $GFILE -w 1000 >$WIN1KB
 
-BAM=$OUTDIR/coral.bam
+BAM=$INDIR/coral.bam
 
 samtools stats $BAM >$OUTDIR/coral.stats
 

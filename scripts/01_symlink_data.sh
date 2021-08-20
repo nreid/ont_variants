@@ -54,7 +54,7 @@ ln -s $R2 $SHORTDIR/r2.fastq
 # symlink the ONT fastq data
 
 LONGDIR=../data/longreads
-mkdir -p $SHORTDIR
+mkdir -p $LONGDIR
 
 # fast base-called data
 FA=/projects/EBP/Oneill/coral/primnoidae_646m/refine_reads/combined_ont_reads/centrifuge/coral_combined_m1p1-4_2kbfilt_rmcontam.fasta
