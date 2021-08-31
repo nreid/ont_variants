@@ -21,7 +21,7 @@ module load bedtools
 module load bamtools
 module load htslib
 module load freebayes
-
+module load GATK/4.2.0.0
 
 # make a directory for results if it doesn't exist
 OUTDIR=../../results/short_reads/gatk
@@ -35,8 +35,13 @@ GEN=../../genome/coral.fasta
 # BAM file
 BAM=../../results/short_reads/alignment/coral.bam
 
-# call freebayes
-	# coverage limits defined by looking at the distribution of per base coverage
+# call gatk
+
+# create reference sequence dictionary
+
+gatk CreateSequenceDictionary -R $GEN
+
+# call variants
 
 gatk --java-options "-Xmx10g" HaplotypeCaller  \
    -R $GEN \
