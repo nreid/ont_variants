@@ -3,7 +3,7 @@
 #SBATCH -N 1
 #SBATCH -n 1
 #SBATCH -c 12
-#SBATCH --partition=general
+#SBATCH --partition=xeon
 #SBATCH --qos=general
 #SBATCH --mail-type=ALL
 #SBATCH --mem=60G
