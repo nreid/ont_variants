@@ -11,6 +11,8 @@
 #SBATCH -o %x_%j.out
 #SBATCH -e %x_%j.err
 
+hostname
+date
 
 # load software
 module load bedtools
