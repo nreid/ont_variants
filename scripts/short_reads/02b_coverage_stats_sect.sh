@@ -19,6 +19,7 @@ module load bedtools
 module load htslib
 
 # kat installed in my local directory in a python environment
+source ~/miniconda3/etc/profile.d/conda.sh
 conda activate kat
 
 # input/output files, directories
