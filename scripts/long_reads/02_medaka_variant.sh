@@ -48,4 +48,5 @@ medaka_variant \
 -f $FASTA \
 -o $OUTDIR \
 -s r941_prom_fast_g303 \
+-m r941_prom_fast_g303 \
 -t 12
