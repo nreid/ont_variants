@@ -53,7 +53,7 @@ bedtools map \
 -b <(zcat $OUTDIR/sect_shortreads-counts.bed.gz) \
 -c 4 \
 -o count,mean,median,max \
--g ../../genome/GCF_011125445.2_MU-UCD_Fhet_4.1_genomic.fna.fai | \
+-g $FAI | \
 bgzip >$OUTDIR/sect_shortreads-counts-1kbwin.bed.gz
 
 # index the window file
@@ -75,7 +75,7 @@ bedtools map \
 -b <(zcat $OUTDIR/sect_genome-counts.bed.gz) \
 -c 4 \
 -o count,mean,median,max \
--g ../../genome/GCF_011125445.2_MU-UCD_Fhet_4.1_genomic.fna.fai | \
+-g $FAI | \
 bgzip >$OUTDIR/sect_genome-counts-1kbwin.bed.gz
 
 # index the window file
