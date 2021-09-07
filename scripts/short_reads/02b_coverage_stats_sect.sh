@@ -33,6 +33,7 @@ FQ2=../../data/shortreads/r2.fastq
 
 # run kat sect
 	# kat doesn't seem to work unless the extension is .fa, not .fna so copy the genome then delete the copy
+	# default k-mer length = 27
 cp ../../genome/coral.fasta ../../genome/coral.fa
 kat sect -t 10 -E -F -o $OUTDIR/sect_shortreads ../../genome/coral.fa $FQ1 $FQ2
 kat sect -t 10 -E -F -o $OUTDIR/sect_genome ../../genome/coral.fa ../../genome/coral.fa
@@ -42,6 +43,7 @@ rm ../../genome/coral.fa
 # kmer coverage by position into a bed file
 	# kmer coverage contig lengths are contig_length - kmer_length + 1
 		# must adjust accordingly
+		# DEFAULT K-MER LENGTH = 27
 paste \
 <(bedtools makewindows -g <(cat $FAI | awk '{OFS="\t"}{d=$2-26}{print $1,d}') -w 1 -s 1) \
 <(grep -v "^>" $OUTDIR/sect_shortreads-counts.cvg | tr " " "\n") | \
@@ -64,6 +66,7 @@ tabix -p bed $OUTDIR/sect_shortreads-counts-1kbwin.bed.gz
 # kmer coverage by position into a bed file
 	# kmer coverage contig lengths are contig_length - kmer_length + 1
 		# must adjust accordingly
+		# DEFAULT K-MER LENGTH = 27
 paste \
 <(bedtools makewindows -g <(cat $FAI | awk '{OFS="\t"}{d=$2-26}{print $1,d}') -w 1 -s 1) \
 <(grep -v "^>" $OUTDIR/sect_genome-counts.cvg | tr " " "\n") | \
