@@ -17,7 +17,6 @@ date
 
 # load software
 
-module load medaka/1.4.3
 module load minimap2/2.18
 module load samtools/1.12
 
@@ -35,11 +34,9 @@ mkdir -p $OUTDIR
 ALDIR=$OUTDIR/alignment
 mkdir -p $ALDIR
 
-# run medaka
-./medaka_variant_dontfollow \
--i $(pwd)/$ALDIR/coral.bam \
--f $(pwd)/$FASTA \
--o $(pwd)/$OUTDIR \
--s r941_prom_fast_g303 \
--m r941_prom_fast_g303 \
--t 12
+# run minimap
+minimap2 -c --MD -ax map-ont -t 10 $GENOME $FASTA | \
+samtools sort -@ 5 -T $ALDIR/coral.temp -O BAM \
+>$ALDIR/coral.bam
+
+samtools index $ALDIR/coral.bam

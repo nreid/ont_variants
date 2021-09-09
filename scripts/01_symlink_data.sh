@@ -28,7 +28,7 @@ mkdir -p $GENOMEDIR
 
 GENOME=/projects/EBP/Oneill/coral/primnoidae_646m/genome_assembly/m1p1-4_rmcontam/flye/750m_icov40/medaka/purge_haplotigs/purge_duplicates/curated/seqs/curated.purged.fa
 
-ln -s $GENOME $GENOMEDIR/coral.fasta
+cp $GENOME $GENOMEDIR/coral.fasta
 
 # index the genome using bwa
 bwa index \

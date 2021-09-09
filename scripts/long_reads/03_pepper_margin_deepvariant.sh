@@ -20,12 +20,12 @@ module load singularity/3.7.1
 THREADS="12"
 
 # input/output files, directories
-OUTDIR=../../results/longreads/pepper_deepvariant
+OUTDIR=$(pwd)/../../results/longreads/pepper_deepvariant
 mkdir -p $OUTDIR
 
-export TMPDIR=../../results/longreads/pepper_deepvariant/tmp
-export SINGULARITY_TMPDIR=$TMPDIR
-mkdir $TMPDIR
+export TMPDIR=/scratch/$USER
+export SINGULARITY_TMPDIR=/scratch/$USER
+mkdir -p $TMPDIR
 
 BAM=../../results/longreads/medaka_variant/alignment/coral.bam
 GENOME=../../genome/coral.fasta

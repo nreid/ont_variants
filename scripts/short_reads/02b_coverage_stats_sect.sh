@@ -84,3 +84,21 @@ bgzip >$OUTDIR/sect_genome-counts-1kbwin.bed.gz
 # index the window file
 tabix -p bed $OUTDIR/sect_genome-counts-1kbwin.bed.gz
 
+# ratio of coverage
+paste \
+<(zcat $OUTDIR/sect_shortreads-counts.bed.gz) \
+<(zcat $OUTDIR/sect_genome-counts.bed.gz  | cut -f 4) | \
+awk '$5 > 0' | \
+awk '{x= $4 / $5}{print $0"\t"x}' | \
+bgzip >$OUTDIR/sect_ratio-counts.bed.gz
+
+# 1kb win ratio of coverage
+# summarize kmer coverage in 1kb windows. median is maybe most useful?
+bedtools map \
+-a $OUTDIR/coral_1kb.bed \
+-b <(zcat $OUTDIR/sect_ratio-counts.bed.gz) \
+-c 4,4,5,5,6,6 \
+-o count,median,count,median,count,median \
+-g $FAI | \
+bgzip >$OUTDIR/sect_ratio-counts-1kbwin.bed.gz
+
