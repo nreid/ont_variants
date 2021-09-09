@@ -51,15 +51,20 @@ ln -s $R1 $SHORTDIR/r1.fastq
 ln -s $R2 $SHORTDIR/r2.fastq
 
 
-# symlink the ONT fastq data
+# symlink the ONT fasta/q data
 
 LONGDIR=../data/longreads
 mkdir -p $LONGDIR
 
-# fast base-called data
+# fast base-called data, fasta
 FA=/projects/EBP/Oneill/coral/primnoidae_646m/refine_reads/combined_ont_reads/centrifuge/coral_combined_m1p1-4_2kbfilt_rmcontam.fasta
 
 ln -s $FA $LONGDIR/fast_called.fasta
+
+# fast base-called data, fastq. copied because it lives in archive currently. 
+FQ=/archive/projects/EBP/roneill/reads/nanopore/minion/coral_minion/03Oct2019_Coral_MIN106_FAK10514_LSK109/fastq_pass/coral_combined_m1p1-4.fq
+
+cp $FQ $LONGDIR/
 
 # re-base-called data
 #TBD

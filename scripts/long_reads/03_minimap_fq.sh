@@ -2,7 +2,7 @@
 #SBATCH --job-name=medaka_variant
 #SBATCH -N 1
 #SBATCH -n 1
-#SBATCH -c 12
+#SBATCH -c 14
 #SBATCH --partition=xeon
 #SBATCH --qos=general
 #SBATCH --mail-type=ALL
@@ -19,24 +19,26 @@ date
 
 module load minimap2/2.18
 module load samtools/1.12
+module load bioawk
 
 # input/output files, directories
 NPROC=$(nproc)
-FASTA=../../data/longreads/fast_called.fasta
+FASTQ=../../data/longreads/coral_combined_m1p1-4.fq
 GENOME=../../genome/coral.fasta
 
 OUTROOT=../../results/longreads/
 mkdir -p $OUTROOT
 
-OUTDIR=$OUTROOT/medaka_variant
+OUTDIR=$OUTROOT/pepper_deepvariant
 mkdir -p $OUTDIR
 
 ALDIR=$OUTDIR/alignment
 mkdir -p $ALDIR
 
 # run minimap
-minimap2 -c --MD -ax map-ont -t 10 $GENOME $FASTA | \
+bioawk -c fastx '{if (length($seq) > 2000) print $0}' $FASTQ
+minimap2 -2 -c --MD -ax map-ont -t 10 $GENOME /dev/stdin | \
 samtools sort -@ 5 -T $ALDIR/coral.temp -O BAM \
->$ALDIR/coral.bam
+>$ALDIR/coral_fq.bam
 
-samtools index $ALDIR/coral.bam
+samtools index $ALDIR/coral_fq.bam
