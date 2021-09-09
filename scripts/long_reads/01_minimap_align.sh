@@ -6,7 +6,7 @@
 #SBATCH --partition=xeon
 #SBATCH --qos=general
 #SBATCH --mail-type=ALL
-#SBATCH --mem=40G
+#SBATCH --mem=100G
 #SBATCH --mail-user=noah.reid@uconn.edu
 #SBATCH -o %x_%j.out
 #SBATCH -e %x_%j.err
