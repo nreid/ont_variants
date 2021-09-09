@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=medaka_variant
+#SBATCH --job-name=minimap_fa
 #SBATCH -N 1
 #SBATCH -n 1
 #SBATCH -c 12
