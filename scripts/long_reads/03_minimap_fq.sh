@@ -37,7 +37,7 @@ mkdir -p $ALDIR
 
 # run minimap
 bioawk -c fastx '{if (length($seq) > 2000) print "@"$name"\n"$seq"\n+\n"$qual}' $FASTQ | \
-minimap2 -2 -c --MD -ax map-ont -t 10 $GENOME /dev/stdin | \
+minimap2 -2 -c --MD -ax map-ont -t 10 $GENOME - | \
 samtools sort -@ 5 -T $ALDIR/coral.temp -O BAM \
 >$ALDIR/coral_fq.bam
 
