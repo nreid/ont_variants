@@ -38,7 +38,7 @@ mkdir -p $ALDIR
 # run medaka
 ./medaka_variant_dontfollow \
 -i $(pwd)/$ALDIR/coral.bam \
--f $(pwd)/$FASTA \
+-f $(pwd)/$GENOME \
 -o $(pwd)/$OUTDIR \
 -s r941_prom_fast_g303 \
 -m r941_prom_fast_g303 \
