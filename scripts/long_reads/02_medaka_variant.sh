@@ -36,7 +36,7 @@ ALDIR=$OUTDIR/alignment
 mkdir -p $ALDIR
 
 # run medaka
-./medaka_variant_dontfollow \
+bash -x medaka_variant_dontfollow \
 -i $(pwd)/$ALDIR/coral.bam \
 -f $(pwd)/$GENOME \
 -o $(pwd)/$OUTDIR \
