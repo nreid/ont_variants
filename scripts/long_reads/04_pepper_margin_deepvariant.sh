@@ -16,6 +16,7 @@ date
 
 module load singularity/3.7.1
 module load vcflib/1.0.0-rc1 
+module load parallel/20180122
 
 # Set the number of CPUs to use
 THREADS="1"
