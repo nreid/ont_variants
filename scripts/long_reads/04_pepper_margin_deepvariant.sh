@@ -30,7 +30,7 @@ mkdir -p $TMPDIR
 
 BAM=../../results/longreads/pepper_deepvariant/alignment/coral_fq.bam
 GENOME=../../genome/coral.fasta
-FAI=../../genome/cora.fasta.fai
+FAI=../../genome/coral.fasta.fai
 
 
 # Pull the docker images
