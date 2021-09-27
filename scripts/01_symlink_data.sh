@@ -61,7 +61,7 @@ FA=/projects/EBP/Oneill/coral/primnoidae_646m/refine_reads/combined_ont_reads/ce
 
 ln -s $FA $LONGDIR/fast_called.fasta
 
-# fast base-called data, fastq. copied because it lives in archive currently. 
+# fast base-called data, fastq. copied because it lives in archive currently.
 FQ=/archive/projects/EBP/roneill/reads/nanopore/minion/coral_minion/03Oct2019_Coral_MIN106_FAK10514_LSK109/fastq_pass/coral_combined_m1p1-4.fq
 
 cp $FQ $LONGDIR/
