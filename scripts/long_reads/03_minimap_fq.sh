@@ -29,11 +29,9 @@ GENOME=../../genome/coral.fasta
 OUTROOT=../../results/longreads/
 mkdir -p $OUTROOT
 
-OUTDIR=$OUTROOT/pepper_deepvariant
-mkdir -p $OUTDIR
-
-ALDIR=$OUTDIR/alignment
+ALDIR=$OUTROOT/alignment
 mkdir -p $ALDIR
+
 
 # run minimap
 bioawk -c fastx '{if (length($seq) > 2000) print "@"$name"\n"$seq"\n+\n"$qual}' $FASTQ | \

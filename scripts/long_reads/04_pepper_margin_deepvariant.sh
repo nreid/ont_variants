@@ -29,7 +29,7 @@ export TMPDIR=/scratch/$USER
 export SINGULARITY_TMPDIR=/scratch/$USER
 mkdir -p $TMPDIR
 
-BAM=../../results/longreads/pepper_deepvariant/alignment/coral_fq.bam
+BAM=../../results/longreads/alignment/coral_fq.bam
 GENOME=../../genome/coral.fasta
 FAI=../../genome/coral.fasta.fai
 
