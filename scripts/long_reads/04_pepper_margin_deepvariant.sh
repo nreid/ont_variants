@@ -51,4 +51,4 @@ run_pepper_margin_deepvariant call_variant \
 
 
 # -p $OUTPRE \
-cut -f 1 $FAI | parallel --dryrun -k -j 10 $command -r {} -p {}
+cut -f 1 $FAI | parallel -k -j 10 $command -r {} -p {}
