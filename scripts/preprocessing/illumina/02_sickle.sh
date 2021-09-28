@@ -17,8 +17,8 @@ date
 
 
 # set variables
-#forwardInput=/projects/EBP/Oneill/reads/illumina/coral/coral/primnoidae_646m/genome_size_estimation/02_trim_adapter/cutadapt_output/Coral-WGS_S14_L002_R1_001_adapt.fastq.gz
-#reverseInput=/projects/EBP/Oneill/reads/illumina/coral/coral/primnoidae_646m/genome_size_estimation/02_trim_adapter/cutadapt_output/Coral-WGS_S14_L002_R2_001_adapt.fastq.gz
+#forwardInput=/core/projects/EBP/Oneill/reads/illumina/coral/coral/primnoidae_646m/genome_size_estimation/02_trim_adapter/cutadapt_output/Coral-WGS_S14_L002_R1_001_adapt.fastq.gz
+#reverseInput=/core/projects/EBP/Oneill/reads/illumina/coral/coral/primnoidae_646m/genome_size_estimation/02_trim_adapter/cutadapt_output/Coral-WGS_S14_L002_R2_001_adapt.fastq.gz
 forwardOutput=sickle_output/Coral-WGS_S14_L002_R1_001_adapt_sickle.fastq
 reverseOutput=sickle_output/Coral-WGS_S14_L002_R2_001_adapt_sickle.fastq
 singlesOutput=sickle_output/Coral-WGS_S14_L002_singles_adapt_sickle.fastq

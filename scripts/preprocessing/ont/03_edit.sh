@@ -11,4 +11,4 @@
 #SBATCH -o %x_%j.out
 #SBATCH -e %x_%j.err
 
-awk '/^>/ { print (NR==1 ? "" : RS) $0; next } { printf "%s", $0 } END { printf RS }' /projects/EBP/Oneill/reads/nanopore/promethion/DOG/2021Jan11_ROneill_DOG_Worms/2021Jan11_ROneill_DOG_Riftia_PAG06574/20210111_2218_1C_PAG06574_ab860f71/fastq_pass/Riftia_p1_combined.fasta > Riftia_p1_combined_edit.fasta
+awk '/^>/ { print (NR==1 ? "" : RS) $0; next } { printf "%s", $0 } END { printf RS }' /core/projects/EBP/Oneill/reads/nanopore/promethion/DOG/2021Jan11_ROneill_DOG_Worms/2021Jan11_ROneill_DOG_Riftia_PAG06574/20210111_2218_1C_PAG06574_ab860f71/fastq_pass/Riftia_p1_combined.fasta > Riftia_p1_combined_edit.fasta

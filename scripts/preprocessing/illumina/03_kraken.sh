@@ -15,8 +15,8 @@ hostname
 date
 
 
-forwardInput=/projects/EBP/Oneill/reads/illumina/coral/coral/primnoidae_646m/genome_size_estimation/03_quality_trim/sickle_output/Coral-WGS_S14_L002_R1_001_adapt_sickle.fastq
-reverseInput=/projects/EBP/Oneill/reads/illumina/coral/coral/primnoidae_646m/genome_size_estimation/03_quality_trim/sickle_output/Coral-WGS_S14_L002_R2_001_adapt_sickle.fastq
+forwardInput=/core/projects/EBP/Oneill/reads/illumina/coral/coral/primnoidae_646m/genome_size_estimation/03_quality_trim/sickle_output/Coral-WGS_S14_L002_R1_001_adapt_sickle.fastq
+reverseInput=/core/projects/EBP/Oneill/reads/illumina/coral/coral/primnoidae_646m/genome_size_estimation/03_quality_trim/sickle_output/Coral-WGS_S14_L002_R2_001_adapt_sickle.fastq
 
 
 #################################################################

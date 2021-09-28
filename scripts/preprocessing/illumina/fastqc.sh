@@ -14,8 +14,8 @@
 hostname
 date
 
-forward=/projects/EBP/Oneill/reads/illumina/coral/primnoidae_646m/WGS_2021Apr08/Coral-WGS_S14_L002_R1_001.fastq.gz
-reverse=/projects/EBP/Oneill/reads/illumina/coral/primnoidae_646m/WGS_2021Apr08/Coral-WGS_S14_L002_R2_001.fastq.gz
+forward=/core/projects/EBP/Oneill/reads/illumina/coral/primnoidae_646m/WGS_2021Apr08/Coral-WGS_S14_L002_R1_001.fastq.gz
+reverse=/core/projects/EBP/Oneill/reads/illumina/coral/primnoidae_646m/WGS_2021Apr08/Coral-WGS_S14_L002_R2_001.fastq.gz
 
 ##########################################################
 ## FASTQC Raw Reads                                     ##

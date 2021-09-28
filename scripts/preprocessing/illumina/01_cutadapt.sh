@@ -18,8 +18,8 @@ date
 
 # set variables
 adapter=CTGTCTCTTATACACATCT
-forwardInput=/projects/EBP/Oneill/reads/illumina/coral/primnoidae_646m/WGS_2021Apr08/Coral-WGS_S14_L002_R1_001.fastq.gz
-reverseInput=/projects/EBP/Oneill/reads/illumina/coral/primnoidae_646m/WGS_2021Apr08/Coral-WGS_S14_L002_R2_001.fastq.gz
+forwardInput=/core/projects/EBP/Oneill/reads/illumina/coral/primnoidae_646m/WGS_2021Apr08/Coral-WGS_S14_L002_R1_001.fastq.gz
+reverseInput=/core/projects/EBP/Oneill/reads/illumina/coral/primnoidae_646m/WGS_2021Apr08/Coral-WGS_S14_L002_R2_001.fastq.gz
 forwardOutput=cutadapt_output/Coral-WGS_S14_L002_R1_001_adapt.fastq.gz
 reverseOutput=cutadapt_output/Coral-WGS_S14_L002_R2_001_adapt.fastq.gz
 fastqcOutput=cutadapt_output/qc
