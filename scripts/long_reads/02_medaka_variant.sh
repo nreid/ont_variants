@@ -2,7 +2,7 @@
 #SBATCH --job-name=medaka_variant
 #SBATCH -N 1
 #SBATCH -n 1
-#SBATCH -c 36
+#SBATCH -c 20
 #SBATCH --partition=xeon
 #SBATCH --qos=general
 #SBATCH --mail-type=ALL
@@ -40,6 +40,6 @@ command=$(echo bash -x medaka_variant_dontfollow \
 -f $(pwd)/$GENOME \
 -s r941_prom_fast_g303 \
 -m r941_prom_fast_g303 \
--t 3)
+-t 2)
 
 awk '$2 > 10000' $FAI | cut -f 1 | parallel --dryrun -k -j 10 $command -r {} -o $(pwd)/$OUTDIR/{}
