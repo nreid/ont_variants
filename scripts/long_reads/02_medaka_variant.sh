@@ -32,7 +32,7 @@ mkdir -p $OUTROOT
 OUTDIR=$OUTROOT/medaka_variant/scaffolds
 mkdir -p $OUTDIR
 
-ALDIR=$OUTDIR/alignment
+ALDIR=../../results/longreads/medaka_variant/alignment
 
 # run medaka on each scaffold individually
 command=$(echo bash -x medaka_variant_dontfollow \
