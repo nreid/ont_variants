@@ -42,4 +42,4 @@ command=$(echo bash -x medaka_variant_dontfollow \
 -m r941_prom_fast_g303 \
 -t 2)
 
-awk '$2 > 10000' $FAI | cut -f 1 | parallel --dryrun -k -j 10 $command -r {} -o $(pwd)/$OUTDIR/{}
+awk '$2 > 10000' $FAI | cut -f 1 | parallel -k -j 10 $command -r {} -o $(pwd)/$OUTDIR/{}
