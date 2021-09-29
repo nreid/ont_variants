@@ -22,7 +22,10 @@ module load parallel/20180122
 THREADS="1"
 
 # input/output files, directories
-OUTDIR=../../results/longreads/pepper_deepvariant/scaffolds
+OUTDIR=../../results/longreads/pepper_deepvariant
+mkdir -p $OUTDIR
+
+SCAFDIR=../../results/longreads/pepper_deepvariant/scaffolds
 mkdir -p $OUTDIR
 
 export TMPDIR=/scratch/$USER
@@ -45,10 +48,10 @@ $OUTDIR/pepper_deepvariant_r0.5.sif \
 run_pepper_margin_deepvariant call_variant \
 -b $BAM \
 -f $GENOME \
--o $OUTDIR \
+-o $SCAFDIR \
 -t $THREADS \
 --ont)
 
 
-# -p $OUTPRE \
+# run pepper on each scaffold separately
 cut -f 1 $FAI | parallel -k -j 10 $command -r {} -p {}
