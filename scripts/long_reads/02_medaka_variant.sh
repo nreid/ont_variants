@@ -2,7 +2,7 @@
 #SBATCH --job-name=medaka_variant
 #SBATCH -N 1
 #SBATCH -n 1
-#SBATCH -c 12
+#SBATCH -c 36
 #SBATCH --partition=xeon
 #SBATCH --qos=general
 #SBATCH --mail-type=ALL
@@ -22,24 +22,24 @@ module load minimap2/2.18
 module load samtools/1.12
 
 # input/output files, directories
-NPROC=$(nproc)
 FASTA=../../data/longreads/fast_called.fasta
 GENOME=../../genome/coral.fasta
+FAI=../../genome/coral.fasta.fai
 
 OUTROOT=../../results/longreads/
 mkdir -p $OUTROOT
 
-OUTDIR=$OUTROOT/medaka_variant
+OUTDIR=$OUTROOT/medaka_variant/scaffolds
 mkdir -p $OUTDIR
 
 ALDIR=$OUTDIR/alignment
-mkdir -p $ALDIR
 
-# run medaka
-bash -x medaka_variant_dontfollow \
+# run medaka on each scaffold individually
+command=$(echo bash -x medaka_variant_dontfollow \
 -i $(pwd)/$ALDIR/coral.bam \
 -f $(pwd)/$GENOME \
--o $(pwd)/$OUTDIR \
 -s r941_prom_fast_g303 \
 -m r941_prom_fast_g303 \
--t 12
+-t 3)
+
+awk '$2 > 10000' $FAI | cut -f 1 | parallel --dryrun -k -j 10 $command -r {} -o $(pwd)/$OUTDIR/{}
