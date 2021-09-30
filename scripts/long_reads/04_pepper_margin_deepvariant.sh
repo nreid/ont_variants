@@ -48,10 +48,9 @@ $OUTDIR/pepper_deepvariant_r0.5.sif \
 run_pepper_margin_deepvariant call_variant \
 -b $BAM \
 -f $GENOME \
--o $SCAFDIR \
 -t $THREADS \
 --ont)
 
 
 # run pepper on each scaffold separately
-cut -f 1 $FAI | parallel -k -j 10 "mkdir $SCAFDIR/{}; $command -r {} -p {}"
+cut -f 1 $FAI | parallel -k -j 10 "mkdir $SCAFDIR/{}; $command -o $SCAFDIR/{} -r {} -p {}"
