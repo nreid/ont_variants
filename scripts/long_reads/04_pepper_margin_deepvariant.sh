@@ -43,7 +43,7 @@ singularity pull --dir $OUTDIR docker://kishwars/pepper_deepvariant:r0.5
 
 
 # command for PEPPER-Margin-DeepVariant
-command=$(echo singularity exec --bind /usr/lib/locale/ \
+command=$(echo singularity exec --bind /usr/lib/locale/ --bind $(pwd) \
 $OUTDIR/pepper_deepvariant_r0.5.sif \
 run_pepper_margin_deepvariant call_variant \
 -b $BAM \
