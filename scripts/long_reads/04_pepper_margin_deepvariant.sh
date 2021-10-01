@@ -53,4 +53,4 @@ run_pepper_margin_deepvariant call_variant \
 
 
 # run pepper on each scaffold separately
-cut -f 1 $FAI | parallel -k -j 10 "mkdir $SCAFDIR/{}; $command -o $SCAFDIR/{} -r {} -p {}"
+cut -f 1 $FAI | parallel -j 10 "mkdir $SCAFDIR/{}; $command -o $SCAFDIR/{} -r {} -p {}"
