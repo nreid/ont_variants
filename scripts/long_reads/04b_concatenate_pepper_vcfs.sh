@@ -5,7 +5,7 @@
 #SBATCH -c 4
 #SBATCH --mem=5G
 #SBATCH --qos=general
-#SBATCH --partition=xeon
+#SBATCH --partition=general
 #SBATCH --mail-user=
 #SBATCH --mail-type=END
 #SBATCH -o %x_%j.out
@@ -16,7 +16,7 @@ date
 
 # load software
 module load vcflib/1.0.0-rc1
-module load htslib/htslib/1.12
+module load htslib/1.12
 
 
 # input/output, necessary directories
