@@ -30,7 +30,7 @@ BASE=../../results/longreads/pepper_deepvariant/scaffolds/
 do
 	if test -f "${BASE}/${FILE}/${FILE}.vcf.gz"; then
 	    echo "$FILE exists." >&2
-	    zcat $FILE
+	    zcat ${BASE}/${FILE}/${FILE}.vcf.gz
 	else
 		echo "$FILE DOES NOT EXIST"	>&2
 	fi
