@@ -2,8 +2,8 @@
 #SBATCH --job-name=concat_pepper
 #SBATCH -n 1
 #SBATCH -N 1
-#SBATCH -c 20
-#SBATCH --mem=180G
+#SBATCH -c 4
+#SBATCH --mem=5G
 #SBATCH --qos=general
 #SBATCH --partition=xeon
 #SBATCH --mail-user=
