@@ -68,5 +68,19 @@ bamtools filter -in $BAM -mapQuality ">30" -isDuplicate false -isProperPair true
 samtools depth -d 20000 /dev/stdin | \
 bgzip >$OUTDIR/per_base_coverage.txt.gz
 
+# summarize per-base coverage in 1kb windows
+zcat $OUTDIR/per_base_coverage.txt.gz | \
+awk '{OFS="\t"}{x=$2-1}{print $1,x,$2,$3}' | \
+bedtools map \
+-a $WIN1KB \
+-b stdin \
+-c 4 -o mean,median,count \
+-g $GFILE | \
+bgzip >$OUTDIR/coverage_base_1kb.bed.gz
+
+# bgzip compress and tabix index the resulting file
+tabix -p bed $OUTDIR/coverage_base_1kb.bed.gz
+
+
 date
 
