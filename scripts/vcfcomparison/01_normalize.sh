@@ -27,17 +27,20 @@ module load bcftools/1.12
 OUTDIR=../../results/vcfcomparison/vcfs
 mkdir -p $OUTDIR
 
+# ref genome
+GENOME=../../genome/coral.fasta
+
 # vcf files
 fbvcf=../../results/short_reads/freebayes/coral_fb.vcf.gz
 gtvcf=../../results/short_reads/gatk/coral_gatk.vcf.gz
 ppvcf=../../results/longreads/pepper_deepvariant/pepper.vcf.gz
 
 # freebayes
-vt normalize $fbvcf | vcfallelicprimitives | bgzip >$OUTDIR/fb.vcf.gz
+vt normalize -r $GENOME $fbvcf | vcfallelicprimitives | bgzip >$OUTDIR/fb.vcf.gz
 tabix -p $OUTDIR/fb.vcf.gz
 # gatk
-vt normalize $gtvcf | vcfallelicprimitives | bgzip >$OUTDIR/gt.vcf.gz
+vt normalize -r $GENOME $gtvcf | vcfallelicprimitives | bgzip >$OUTDIR/gt.vcf.gz
 tabix -p $OUTDIR/gt.vcf.gz
 
-cp ${ppvcf}* .
+cp ${ppvcf}* $OUTDIR
 
