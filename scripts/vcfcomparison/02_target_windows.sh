@@ -27,7 +27,7 @@ module load htslib/1.12
 
 # input/output
 OUTDIR=../../results/vcfcomparison/targets
-mkdir -p
+mkdir -p $OUTDIR
 
 # coverage stats for long and short reads
 LCOV=../../results/longreads/coverage_stats/coverage_1kb.bed.gz
