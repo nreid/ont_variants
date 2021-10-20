@@ -25,8 +25,8 @@ mkdir -p $OUTDIR
 
 TARGETS=../../results/vcfcomparison/targets/targets.bed.gz
 
-bcftools isec -p $INDIR/fb_gt -T $TARGETS -i 'TYPE="SNP"' $INDIR/fb.vcf.gz $INDIR/gt.vcf.gz
+bcftools isec -p $OUTDIR/fb_gt -T $TARGETS -i 'TYPE="SNP"' $INDIR/fb.vcf.gz $INDIR/gt.vcf.gz
 
-bcftools isec -p $INDIR/fb_pp -T $TARGETS -i 'TYPE="SNP"' $INDIR/fb.vcf.gz $INDIR/pepper.vcf.gz
+bcftools isec -p $OUTDIR/fb_pp -T $TARGETS -i 'TYPE="SNP"' $INDIR/fb.vcf.gz $INDIR/pepper.vcf.gz
 
-bcftools isec -p $INDIR/gt_pp -T $TARGETS -i 'TYPE="SNP"' $INDIR/gt.vcf.gz $INDIR/pepper.vcf.gz
+bcftools isec -p $OUTDIR/gt_pp -T $TARGETS -i 'TYPE="SNP"' $INDIR/gt.vcf.gz $INDIR/pepper.vcf.gz
