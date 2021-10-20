@@ -25,6 +25,15 @@ mkdir -p $OUTDIR
 
 TARGETS=../../results/vcfcomparison/targets/targets.bed.gz
 
+# create target VCF files
+bcftools view -T $TARGETS -i 'TYPE="SNP"' $INDIR/fb.vcf.gz | bgzip >$INDIR/fb_targets.vcf.gz
+tabix -p vcf $INDIR/fb_targets.vcf.gz
+bcftools view -T $TARGETS -i 'TYPE="SNP"' $INDIR/gt.vcf.gz | bgzip >$INDIR/gt_targets.vcf.gz
+tabix -p vcf $INDIR/gt_targets.vcf.gz
+bcftools view -T $TARGETS -i 'TYPE="SNP"' $INDIR/pepper.vcf.gz | bgzip >$INDIR/pepper_targets.vcf.gz
+tabix -p vcf $INDIR/pepper_targets.vcf.gz
+
+# create intersections
 bcftools isec -p $OUTDIR/fb_gt -T $TARGETS -i 'TYPE="SNP"' $INDIR/fb.vcf.gz $INDIR/gt.vcf.gz
 
 bcftools isec -p $OUTDIR/fb_pp -T $TARGETS -i 'TYPE="SNP"' $INDIR/fb.vcf.gz $INDIR/pepper.vcf.gz

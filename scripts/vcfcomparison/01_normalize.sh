@@ -36,10 +36,10 @@ gtvcf=../../results/short_reads/gatk/coral_gatk.vcf.gz
 ppvcf=../../results/longreads/pepper_deepvariant/pepper.vcf.gz
 
 # freebayes
-vt normalize -r $GENOME $fbvcf | vcfallelicprimitives | bgzip >$OUTDIR/fb.vcf.gz
+vt normalize -r $GENOME $fbvcf | vcfallelicprimitives -k | bgzip >$OUTDIR/fb.vcf.gz
 tabix -p vcf $OUTDIR/fb.vcf.gz
 # gatk
-vt normalize -r $GENOME $gtvcf | vcfallelicprimitives | bgzip >$OUTDIR/gt.vcf.gz
+vt normalize -r $GENOME $gtvcf | vcfallelicprimitives -k | bgzip >$OUTDIR/gt.vcf.gz
 tabix -p vcf $OUTDIR/gt.vcf.gz
 
 cp ${ppvcf}* $OUTDIR
