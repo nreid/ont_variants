@@ -18,6 +18,7 @@ date
 module load vcflib/1.0.0-rc1
 module load htslib/1.12
 module load bcftools/1.12
+module load vt/0.57721
 
 # First step:
 	# allelic primitives, normalize variants from freebayes, gatk

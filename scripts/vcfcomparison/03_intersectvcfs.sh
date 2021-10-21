@@ -33,6 +33,18 @@ tabix -p vcf $INDIR/gt_targets.vcf.gz
 bcftools view -T $TARGETS -i 'TYPE="SNP"' $INDIR/pepper.vcf.gz | bgzip >$INDIR/pepper_targets.vcf.gz
 tabix -p vcf $INDIR/pepper_targets.vcf.gz
 
+# create tables of relevant data from VCFs with bcftools query
+
+(echo -e "CHROM\tPOS\tREF\tALT\tQUAL\tFILTER\tGT\tDP\tAD"
+bcftools query -f '%CHROM\t%POS\t%REF\t%ALT\t%QUAL\t%FILTER\t[%GT]\t[%DP]\t[%AD]\n' $INDIR/fb_targets.vcf.gz) | bgzip >$INDIR/fb_table.txt.gz
+
+(echo -e "CHROM\tPOS\tREF\tALT\tQUAL\tFILTER\tGT\tDP\tAD"
+bcftools query -f '%CHROM\t%POS\t%REF\t%ALT\t%QUAL\t%FILTER\t[%GT]\t[%DP]\t[%AD]\n' $INDIR/gt_targets.vcf.gz) | bgzip >$INDIR/gt_table.txt.gz
+
+(echo -e "CHROM\tPOS\tREF\tALT\tQUAL\tFILTER\tGT\tDP\tAD"
+bcftools query -f '%CHROM\t%POS\t%REF\t%ALT\t%QUAL\t%FILTER\t[%GT]\t[%DP]\t[%AD]\n' $INDIR/pepper_targets.vcf.gz) | bgzip >$INDIR/pepper_table.txt.gz
+
+
 # create intersections
 bcftools isec -p $OUTDIR/fb_gt -T $TARGETS -i 'TYPE="SNP"' $INDIR/fb.vcf.gz $INDIR/gt.vcf.gz
 
