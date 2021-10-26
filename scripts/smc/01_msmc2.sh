@@ -25,7 +25,7 @@ OUTDIR=../../results/smc/msmc/
 INFILEDIR=$OUTDIR/infiles
 mkdir -p $OUTDIR
 
-VCF=../../results/vcfcomparison/vcfs/pepper.vcf.gz
+VCF=../../results/vcfcomparison/vcfs/pepper_targets.vcf.gz
 TARGETS=../../results/vcfcomparison/targets/targets.bed.gz
 FAI=../../genome/coral.fasta.fai
 
